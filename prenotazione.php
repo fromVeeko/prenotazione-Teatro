@@ -42,7 +42,7 @@
                     $informazioniSedile = visualizzaInformazioniSedile($dataSerata, $sedile); 
                     $statoPosto = $informazioniSedile['stato'];
                     echo ("<div class = 'poltrona'>
-                           <p class = 'poltrona_p'  id = '$IDPosto' onload = \"stampaSedile($statoPosto, $IDPosto)\"></p>
+                           <p class = 'poltrona_p'  id = '$IDPosto' load = \"stampaSedile($statoPosto, $IDPosto)\"></p>
                            </div>");                
                 }
                 echo "</div>
