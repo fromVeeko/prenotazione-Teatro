@@ -218,9 +218,9 @@
         //echo $str;
         //echo "<br>";
         $res = mysqli_query($link, $str); 
-        $visualizzato = mysqli_fetch_array($res);
+        $visualizzato = mysqli_fetch_assoc($res);
         //var_dump($visualizzato);
-        if($visualizzato[2] == 'occupato'){            
+        if($visualizzato['stato'] == 'occupato'){            
             //var_dump($visualizzato);
         }else{
             $visualizzato['nome_prenotante'] = '-';
@@ -261,14 +261,12 @@
     //$data = "01_02_2020";
     //creaTabellaPostiEvento($data);
     //nuovaPrenotazione($data, $sedile);
-    //rimuoviPrenotazione($data, $sedile);
-    
-    //mysqli_query($link, "DROP DATABASE $dbname");
-    //echo "database dropped";
-    
+    ////rimuoviPrenotazione($data, $sedile);
+    ////mysqli_query($link, "DROP DATABASE $dbname"); echo "database dropped";
+    //
     //$visualizzato = visualizzaInformazioniSedile($data, $sedile);
-    //echo "<p>Nome prenotante: $visualizzato[0] | Recapito: $visualizzato[1]</p>";
-    //eliminaTabella($data);
+//
+    ////eliminaTabella($data);
     //mysqli_close($link);
     
     

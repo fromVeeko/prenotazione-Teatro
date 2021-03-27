@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'ubuntubold';
+    src: url('ubuntuFont/ubuntu-bold-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntubold_italic';
+    src: url('ubuntuFont/ubuntu-bolditalic-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntuitalic';
+    src: url('ubuntuFont/ubuntu-italic-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntulight';
+    src: url('ubuntuFont/ubuntu-light-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntulight_italic';
+    src: url('ubuntuFont/ubuntu-lightitalic-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntumedium';
+    src: url('ubuntuFont/ubuntu-medium-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntumedium_italic';
+    src: url('ubuntuFont/ubuntu-mediumitalic-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-mediumitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('ubuntuFont/ubuntu-regular-webfont.woff2') format('woff2'),
+         url('ubuntuFont/ubuntu-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
