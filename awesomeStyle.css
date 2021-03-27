@@ -1,0 +1,164 @@
+@import "ubuntuFont.css";
+
+body{
+    z-index: -1;
+    font-family: "ubunturegular";
+}
+
+.fila{
+    align-content: center;
+    text-align: center;
+    vertical-align: auto;
+    margin: auto;
+    width: 70%;
+    padding:15px;
+    /*border: 3px solid green;*/
+    clear: both;
+}
+
+.nome_fila{
+    display: none;
+    margin: auto;
+    float: left;
+    clear:right;
+    vertical-align: top;    
+}
+
+.poltrona{
+    display: inline;
+    
+}
+
+.sedie_sx{    
+    float:left;
+}
+
+.sedie_dx{ 
+    float: right;
+    padding-top: 25%;
+}
+
+.infoSedile{
+    z-index: 100;
+    position: relative;
+    /*transform: translateX();*/
+    border: 2px solid rgba(5, 182, 5, 0.473);
+    border-radius: 10%;
+    max-width: fit-content;
+    margin: auto;
+    transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);/*wtf is this??*/
+    text-align: center;
+    vertical-align: auto;
+}
+
+.closeButton{
+    /*float: right;
+    clear: both;*/
+    background-color: red;
+    color: white;
+    border-color: black;
+    border-radius: 100%;
+    text-align: center;
+    left: 0px;
+    width: fit-content;
+}
+
+/*.infoSedileContenuto{
+    float:left;
+}*/
+.sedie_sx > .poltrona img{
+    padding-left: 5%;
+    display: block; 
+    width: 38%;
+    height: 38%;   
+}
+
+
+.sedie_dx > .poltrona img{
+    display: block; 
+    width: 38%;
+    height: 38%;
+    
+}
+
+
+.hidden-div-loading-resources{
+    display: none;
+    padding: 1px;
+}
+
+
+
+
+#data_serata{
+    background-color: rgba(187, 206, 16, 0.445);
+    margin: auto;
+    text-align: center;
+}
+
+#fila6{
+    padding-bottom: 7%;
+}
+
+
+#fila13{
+    padding-top: 10%;
+    padding-bottom: 5%;
+    min-height: 100px ;
+    height: 10%;
+    clear: both;
+}
+
+#piano_superiore{
+    border: 1px solid orange;
+    font-weight: bold;
+    clear:both;
+    background-color: rgba(255, 166, 0, 0.363);
+}
+
+#nuovaPrenotazione{
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    z-index: 50;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px; 
+    border-color: black;
+    background-color: rgba(0, 0, 255, 0.705); 
+    color: white; 
+
+}
+
+#alertDiv-nuovaPrenotazione{
+    z-index: 1000;
+    text-align: center;
+    vertical-align: auto;
+    position: fixed;
+    left: auto;
+    margin: auto;
+    top: 5%;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 5%;
+    min-width: fit-content;
+    width: 10%;
+    min-height: fit-content;
+    height: 5%;
+}
+
+#terminaSelezPosti{
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    z-index: 50;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px; 
+    border-color: black;
+    background-color: rgba(255, 0, 0, 0.705); 
+    color: white; 
+
+}
+
+
