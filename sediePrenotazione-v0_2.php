@@ -146,32 +146,36 @@
         if(!$link){
             die("nuovaPrenotazione: Errore di connessione.".mysqli_error($link));
         }else{
-            echo "<p>nuovaPrenotazione: Connessione riuscita</p>";
+            //echo "<p>nuovaPrenotazione: Connessione riuscita</p>";
         }
-        var_dump($sedile);
+        //var_dump($sedile);
         $nomePrenotante = $sedile["nome_prenotante"];
         $recapito = $sedile["recapito"];
         $fila = $sedile["fila"];
         $posto = $sedile["posto"];
-        echo "<br>$nomePrenotante | $recapito | $fila | $posto <br>";
+        //echo "<br>$nomePrenotante | $recapito | $fila | $posto <br>";
+        $str = "SELECT nome_prenotante
+                FROM `$tbname`
+                WHERE fila = '$fila' AND posto = $posto";    
+        $res = mysqli_query($link, $str);
 
-        $str = "UPDATE $tbname 
+        $checkSePrenotato = mysqli_fetch_assoc($res);
+        //var_dump($checkSePrenotato); //da commentare, me serve solo per debug    
+        if($checkSePrenotato["nome_prenotante"] !== null){ //se è false, c'è stato un errore             
+            return 0;
+        }
+
+        $str = "UPDATE `$tbname` 
                 SET stato = 'occupato', nome_prenotante = '$nomePrenotante', recapito = '$recapito'
-                WHERE fila ='$fila' AND posto = $posto ";
+                WHERE fila = '$fila' AND posto = $posto ";
         $res = mysqli_query($link, $str);
 
         if($res){
-            echo $str;
-            echo " || Nuova prenotazione effettuata correttamente<br>";
-           /* $str = "SELECT nome_prenotante, recapito, fila, posto
-                    FROM $tbname
-                    WHERE fila = '$fila' AND posto = '$posto'";
-            echo $str;
-            $res = mysqli_query($link, $str);
-            echo $res.nome_prenotante;*/
+            //echo $str;
+            return 1;
         }
         else 
-            echo "Errore nella nuova prenotazione<br>";
+            return 0;
     }
     
     function rimuoviPrenotazione($tbname, $sedile){
@@ -188,16 +192,16 @@
         $str = "UPDATE $tbname 
                 SET stato = 'libero', nome_prenotante = null, recapito = null
                 WHERE fila = '$fila' AND posto = $posto";
-        echo $str;
+        //echo $str;
         $res = mysqli_query($link, $str);
-        
-        if($res){
-            echo $str;
-            echo " || Prenotazione rimossa correttamente<br>";
-        }            
-        else 
-            echo "Errore nella rimozione della prenotazione<br>";
-
+        /*
+            if($res){
+                //echo $str;
+                //echo " || Prenotazione rimossa correttamente<br>";
+            }            
+            else 
+                //echo "Errore nella rimozione della prenotazione<br>";
+        */
     }
 
     function visualizzaInformazioniSedile($tbname, $sedile){
@@ -236,8 +240,22 @@
     function modificaPrenotazione($tbname, $sedile, $stato){
 
     }
+
+    function verificaEsistenzaTabella($tbname){
+        include "accediDatabase.php";
+        $link = mysqli_connect($host, $username, $password, $dbname);
+        $tbname = mysqli_real_escape_string($link, $tbname);
+        $str = "SELECT *
+                FROM $tbname";
+        $res = mysqli_query($link, $str);
+        if($res == false)
+            return false;
+        else
+            return true;
+    }
     /**************************************************************************************************** */
     
+
     //include "accediDatabase.php";
 
     //$tbname = 'databaseDiProva';
@@ -252,15 +270,16 @@
     //}
 //
     //$sedile = array(    //utile per il debug
-    //    'fila' => 'a',
+    //    'fila' => 'sedie',
     //    'posto' => 1,
-    //    'nome_prenotante' => 'gianfranco pieroni',
+    //    'nome_prenotante' => 'gianfr',
     //    'recapito' => '3348481306'
     //);
     //var_dump($sedile);
     //$data = "01_02_2020";
     //creaTabellaPostiEvento($data);
-    //nuovaPrenotazione($data, $sedile);
+    //$prova = nuovaPrenotazione($data, $sedile);
+    //echo($prova);
     ////rimuoviPrenotazione($data, $sedile);
     ////mysqli_query($link, "DROP DATABASE $dbname"); echo "database dropped";
     //
